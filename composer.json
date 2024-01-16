@@ -1,0 +1,50 @@
+{
+    "name": "usermp/weather-forecast",
+    "description": "A Laravel package for integrating with a weather API",
+    "type": "library",
+    "keywords": ["laravel", "weather", "api"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohammad Yeganeh",
+            "email": "usermp76@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^9.0|^10.0",
+        "illuminate/http": "^9.0|^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.31|^8.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weather\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Weather\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Weather\\WeatherServiceProvider"
+            ],
+            "aliases": {
+                "Weather": "Weather\\Facades\\WeatherFacade"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
