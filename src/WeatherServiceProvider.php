@@ -2,7 +2,7 @@
 
 namespace Weather;
 
-use Weather\Facades\WeatherFacade;
+use Weather\Facades\Weather;
 use Illuminate\Support\ServiceProvider;
 
 class WeatherServiceProvider extends ServiceProvider
@@ -22,6 +22,6 @@ class WeatherServiceProvider extends ServiceProvider
 
         $this->mergeConfigFrom(__DIR__.'/config/weather.php', 'weather');
         
-        $this->app->alias('Weather', WeatherFacade::class);
+        $this->app->alias('Weather', Weather::class);
     }
 }

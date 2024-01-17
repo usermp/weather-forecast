@@ -3,7 +3,7 @@ namespace Weather\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-class WeatherFacade extends Facade
+class Weather extends Facade
 {
     /**
      * @return string
