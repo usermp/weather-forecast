@@ -59,7 +59,10 @@ class Weather
     {
         try {
             $response = Http::get($url);
-            return json_decode($response->json());
+            $decode   = $response->json();
+            if ($decode)
+                return $decode;
+            Log::info("https://weather.visualcrossing.com Not Found: " . $response->status());
         } catch (\Exception $exception) {
             Log::info("https://weather.visualcrossing.com Error: " . $exception->getMessage());
         }
